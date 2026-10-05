@@ -33,16 +33,18 @@ export default function AboutUs() {
 
             {/* Heading */}
 
-            <h2 className="max-w-[700px] text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-[#14213D] sm:text-[46px] lg:text-[52px] xl:text-[58px]">
-              Keeping Our Culture Alive
-              <span className="block">
-                Through Tradition,
-              </span>
+<h2 className="max-w-[700px] text-[30px] font-bold leading-[1.1] tracking-[-0.02em] text-[#14213D] sm:text-[38px] lg:text-[48px] xl:text-[56px]">
+  Keeping Our Culture Alive
+  <span className="block">
+    Through Tradition,
+  </span>
 
-              <span className="block text-[#0B4F8A]">
-                Community & Continuity.
-              </span>
-            </h2>
+  <span className="block text-[#0B4F8A]">
+    Community & Continuity.
+  </span>
+</h2>
+
+
 
             {/* Description */}
 
