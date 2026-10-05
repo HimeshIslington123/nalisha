@@ -10,7 +10,7 @@ const page = () => {
    <>
    <Navbar></Navbar>
    <Hero></Hero>
-   <AboutUs></AboutUs>
+<AboutUs></AboutUs>
    <WhatWeDo></WhatWeDo>
  <Footer></Footer>
    </>

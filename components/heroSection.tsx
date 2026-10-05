@@ -1,244 +1,330 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Play } from "lucide-react";
 
-const slides = [
-  {
-    image: "/kisi.png",
-    label: "येँया: पुन्हि  INDRA JĀTRĀ",
-    quote: "A culture lives when its people continue to celebrate it.",
-    description:
-      "Through chariot cords, traditional rhythms, and sacred libations, our youth stand proudly at the epicentre of festival life.",
-    button: "Discover Our Culture",
-  },
-  {
-    image: "/bhairav.png",
-    label: "धिमे  DHIME",
-    quote: "The rhythm of our ancestors still beats within us.",
-    description:
-      "From generation to generation, traditional instruments and music keep the spirit of Newar culture alive.",
-    button: "Explore Our Music",
-  },
-  {
-    image: "/kumari.png",
-    label: "जात्रा  JĀTRĀ",
-    quote:
-      "Tradition is not something we inherit. It is something we keep alive.",
-    description:
-      "Our festivals bring communities together through devotion, music, celebration, and generations of living tradition.",
-    button: "Explore Our Festivals",
-  },
-  {
-    image: "/dagi.png",
-    label: "समुदाय  COMMUNITY",
-    quote: "Our culture connects generations, communities, and hearts.",
-    description:
-      "We celebrate our heritage by creating opportunities for young people to learn, participate, and carry tradition forward.",
-    button: "Meet Our Community",
-  },
-];
-
-export default function Hero() {
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const previousSlide = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const slide = slides[current];
-
+export default function HeroSection() {
   return (
-    <section className="relative h-[calc(100svh-72px)] min-h-[620px] w-full overflow-hidden bg-[#071827] sm:min-h-[600px]">
+    <section
+      className="
+        relative
+        isolate
+        min-h-[calc(100svh-74px)]
+        w-full
+        overflow-hidden
+        bg-[#1d1b18]
 
-      {/* =====================================================
-          BACKGROUND SLIDES
-      ===================================================== */}
+        sm:min-h-[calc(100svh-80px)]
+      "
+    >
+      {/* =========================================================
+          BACKGROUND IMAGE
+          ========================================================= */}
+      <div className="absolute inset-0 -z-20">
+        <img
+          src="/bhairav.png"
+          alt="Newari cultural heritage, traditional instruments and festival"
+          className="
+            h-full
+            w-full
+            object-cover
+            object-center
+          "
+        />
+      </div>
 
-      {slides.map((item, index) => (
-        <div
-          key={item.image}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <img
-            src={item.image}
-            alt={item.label}
-            className="h-full w-full object-cover object-center"
-          />
-        </div>
-      ))}
+      {/* =========================================================
+          EDITORIAL OVERLAY
+          ========================================================= */}
 
-      {/* =====================================================
-          DESKTOP OVERLAY
-      ===================================================== */}
+      {/* Main left-to-right overlay */}
+      <div
+        className="
+          absolute
+          inset-0
+          -z-10
+          bg-gradient-to-r
+          from-[#1d1b18]/95
+          via-[#1d1b18]/72
+          to-[#1d1b18]/20
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/10" />
-
-      {/* =====================================================
-          MOBILE BOTTOM OVERLAY
-      ===================================================== */}
-
-      <div className="absolute inset-0 bg-gradient-to-t from-[#06131f]/90 via-[#06131f]/25 to-black/5 sm:hidden" />
-
-      {/* Subtle blue tint */}
-      <div className="absolute inset-0 bg-[#0B4F8A]/10" />
+          md:from-[#1d1b18]/90
+          md:via-[#1d1b18]/60
+          md:to-transparent
+        "
+      />
 
       {/* Bottom fade */}
-      <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#06131f]/80 to-transparent" />
+      <div
+        className="
+          absolute
+          inset-x-0
+          bottom-0
+          -z-10
+          h-56
+          bg-gradient-to-t
+          from-[#1d1b18]/70
+          to-transparent
+        "
+      />
 
-      {/* =====================================================
+      {/* =========================================================
           CONTENT
-          Bottom aligned on BOTH mobile and desktop
-      ===================================================== */}
+          ========================================================= */}
+      <div
+        className="
+          mx-auto
+          flex
+          min-h-[calc(100svh-74px)]
+          max-w-[1360px]
+          items-center
+          px-5
+          py-20
 
-      <div className="absolute inset-x-0 bottom-0 z-10 pb-24 sm:pb-28">
-        <div className="site-container">
+          sm:min-h-[calc(100svh-80px)]
+          sm:px-8
 
-          <div className="max-w-[800px]">
+          lg:px-12
+          lg:py-24
 
-            {/* =================================================
-                LABEL
-                Same transparent rounded style everywhere
-            ================================================= */}
+          xl:px-16
+        "
+      >
+        <div className="w-full max-w-[850px]">
 
-            <div
-              key={`label-${current}`}
-              className="mb-4 inline-flex animate-fade-up items-center rounded-full border border-white/25 bg-black/20 px-3.5 py-1.5 text-[9px] font-semibold uppercase tracking-[0.13em] text-white shadow-lg backdrop-blur-md sm:mb-5 sm:px-4 sm:py-2 sm:text-xs"
+          {/* =====================================================
+              EYEBROW
+              ===================================================== */}
+          <div className="mb-6 flex items-center gap-3 sm:mb-7">
+            <span className="h-px w-8 bg-[#C29B38] sm:w-12" />
+
+            <span
+              className="
+                font-sans
+                text-[10px]
+                font-bold
+                uppercase
+                tracking-[0.16em]
+                text-[#ffdbcb]
+
+                sm:text-[11px]
+                sm:tracking-[0.2em]
+              "
             >
-              {slide.label}
-            </div>
+              Na Lisah Sanskritik Pucha
+            </span>
+          </div>
 
-            {/* =================================================
-                QUOTE
-            ================================================= */}
+          {/* =====================================================
+              NEPALI HEADLINE
+              ===================================================== */}
+          <h1
+            className="
+              font-serif
+              text-[40px]
+              font-semibold
+              leading-[1.12]
+              tracking-[-0.02em]
+              text-[#fff8f3]
 
-            <h1
-              key={`quote-${current}`}
-              className="max-w-[780px] animate-fade-up text-[34px] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:text-[48px] md:text-[58px] lg:text-[66px]"
-            >
-              {slide.quote}
-            </h1>
+              sm:text-[52px]
+              sm:leading-[1.08]
 
-            {/* =================================================
-                ORANGE LINE
-            ================================================= */}
+              md:text-[60px]
 
-            <div
-              key={`line-${current}`}
-              className="mt-5 h-[3px] w-12 animate-fade-up rounded-full bg-[#F28C28] sm:mt-6 sm:w-14"
-            />
+              lg:text-[70px]
+              lg:leading-[1.04]
 
-            {/* =================================================
-                DESCRIPTION
-                Hidden on mobile
-            ================================================= */}
+              xl:text-[76px]
+            "
+          >
+            नेपालको मौलिक बाजा,
+            <br />
 
+            <span className="text-[#ffdbcb]">
+              जात्रा र नेवाः
+            </span>
+
+            <br />
+
+            <span className="text-[#D46726]">
+              परम्पराको संरक्षण
+            </span>
+          </h1>
+
+          {/* =====================================================
+              ENGLISH STATEMENT
+              ===================================================== */}
+          <div className="mt-6 sm:mt-7">
             <p
-              key={`description-${current}`}
-              className="mt-6 hidden max-w-[700px] animate-fade-up text-[16px] leading-8 text-white/85 sm:block"
+              className="
+                font-serif
+                text-[25px]
+                font-medium
+                leading-tight
+                text-[#fff8f3]
+
+                sm:text-[31px]
+
+                lg:text-[36px]
+              "
             >
-              {slide.description}
+              Preserving Culture.
             </p>
 
-            {/* =================================================
-                BUTTON
-            ================================================= */}
+            <p
+              className="
+                mt-1
+                font-serif
+                text-[25px]
+                font-medium
+                italic
+                leading-tight
+                text-[#ffdbcb]
 
-            <button
-              key={`button-${current}`}
-              className="group mt-7 inline-flex animate-fade-up items-center gap-2 rounded-full border border-[#F28C28] bg-[#F28C28] px-5 py-3 text-[12px] font-semibold text-white shadow-lg transition-all duration-300 hover:bg-transparent hover:text-[#F28C28] active:scale-95 sm:mt-8 sm:px-7 sm:py-4 sm:text-sm"
+                sm:text-[31px]
+
+                lg:text-[36px]
+              "
             >
-              {slide.button}
+              Celebrating Our Heritage.
+            </p>
+          </div>
+
+          {/* =====================================================
+              DESCRIPTION
+              ===================================================== */}
+          <p
+            className="
+              mt-6
+              max-w-[650px]
+              font-sans
+              text-[14px]
+              leading-6
+              text-white/75
+
+              sm:mt-7
+              sm:text-[16px]
+              sm:leading-7
+
+              lg:text-[17px]
+              lg:leading-8
+            "
+          >
+            Na Lisah Sanskritik Pucha is a community-driven cultural
+            organization dedicated to preserving, practicing, and
+            promoting Nepal&apos;s rich Newari heritage, sacred festival
+            rhythms, traditional instruments, and ancestral traditions
+            for generations to come.
+          </p>
+
+          {/* =====================================================
+              BUTTONS
+              ===================================================== */}
+          <div
+            className="
+              mt-8
+              flex
+              flex-col
+              gap-3
+
+              sm:mt-9
+              sm:flex-row
+            "
+          >
+            {/* PRIMARY */}
+            <Link
+              href="#culture"
+              className="
+                group
+                inline-flex
+                min-h-12
+                items-center
+                justify-center
+                gap-3
+                rounded
+                bg-[#D46726]
+                px-6
+                py-3
+                font-sans
+                text-[13px]
+                font-semibold
+                text-[#fff8f3]
+                transition-all
+                duration-300
+
+                hover:bg-[#E27D38]
+                hover:shadow-[0_8px_24px_rgba(28,26,23,0.18)]
+
+                focus:outline-none
+                focus:ring-2
+                focus:ring-[#ffdbcb]
+              "
+            >
+              Explore Our Culture
 
               <ArrowRight
-                size={15}
-                strokeWidth={2}
-                className="transition-transform duration-300 group-hover:translate-x-1 sm:h-4 sm:w-4"
+                size={17}
+                strokeWidth={1.8}
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
               />
-            </button>
+            </Link>
 
+            {/* SECONDARY */}
+            <Link
+              href="#heritage"
+              className="
+                group
+                inline-flex
+                min-h-12
+                items-center
+                justify-center
+                gap-3
+                rounded
+                border
+                border-white/45
+                bg-white/[0.06]
+                px-6
+                py-3
+                font-sans
+                text-[13px]
+                font-semibold
+                text-white
+                backdrop-blur-sm
+                transition-all
+                duration-300
+
+                hover:border-white
+                hover:bg-white
+                hover:text-[#1d1b18]
+
+                focus:outline-none
+                focus:ring-2
+                focus:ring-white
+              "
+            >
+              <Play
+                size={14}
+                fill="currentColor"
+                strokeWidth={1.5}
+              />
+
+              Discover Our Heritage
+            </Link>
           </div>
+
+          {/* =====================================================
+              BOTTOM LABEL
+              ===================================================== */}
+       
         </div>
       </div>
 
-      {/* =====================================================
-          BOTTOM CONTROLS
-      ===================================================== */}
-
-      <div className="absolute bottom-5 left-0 right-0 z-20 sm:bottom-7">
-        <div className="site-container">
-
-          <div className="flex items-center justify-between">
-
-            {/* =================================================
-                SLIDE INDICATORS
-            ================================================= */}
-
-            <div className="flex items-center gap-1.5">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrent(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    index === current
-                      ? "w-8 bg-[#F28C28] sm:w-12"
-                      : "w-1.5 bg-white/50 hover:bg-white/80"
-                  }`}
-                />
-              ))}
-            </div>
-
-            {/* =================================================
-                ARROWS
-            ================================================= */}
-
-            <div className="flex items-center gap-1.5 sm:gap-2">
-
-              <button
-                onClick={previousSlide}
-                aria-label="Previous slide"
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:border-[#F28C28] hover:bg-[#F28C28] sm:h-12 sm:w-12"
-              >
-                <ArrowLeft
-                  size={15}
-                  strokeWidth={1.8}
-                  className="transition-transform duration-300 group-hover:-translate-x-0.5 sm:h-[18px] sm:w-[18px]"
-                />
-              </button>
-
-              <button
-                onClick={nextSlide}
-                aria-label="Next slide"
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:border-[#F28C28] hover:bg-[#F28C28] sm:h-12 sm:w-12"
-              >
-                <ArrowRight
-                  size={15}
-                  strokeWidth={1.8}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5 sm:h-[18px] sm:w-[18px]"
-                />
-              </button>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
+     
     </section>
   );
 }
-

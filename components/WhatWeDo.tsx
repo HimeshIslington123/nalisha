@@ -1,142 +1,140 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { initiatives } from "@/data/initiatives";
 
 export default function WhatWeDo() {
   return (
-    <section className="w-full bg-[#F7F9FC] py-12 sm:py-16 lg:py-20">
-      <div className="site-container">
-
+    <section className="w-full bg-[#FAF8F5] py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12">
         {/* =====================================================
             HEADER
         ===================================================== */}
 
-        <div className="mb-8 flex flex-col gap-4 sm:mb-10 lg:flex-row lg:items-end lg:justify-between">
-
+        <div className="grid gap-8 border-b border-[#DDC1B4] pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:pb-12">
           <div>
+            <div className="mb-5 flex items-center gap-4">
+              <span className="h-px w-10 bg-[#D46726]" />
 
-            {/* Orange + Blue eyebrow */}
-
-            <div className="mb-3 flex items-center gap-2">
-
-              <span className="h-[2px] w-7 bg-[#F28C28]" />
-
-              <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#A85413] sm:text-[11px]">
+              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8A7267]">
                 हाम्रो कार्यक्षेत्र
               </span>
-
             </div>
 
-            <h2 className="text-[34px] font-bold leading-[1.1] tracking-[-0.02em] text-[#17243B] sm:text-[40px] lg:text-[44px]">
+            <h2 className="font-serif text-[38px] leading-[1.08] tracking-[-0.02em] text-[#1C1A17] sm:text-[48px] lg:text-[54px]">
               What We Do
+              <span className="text-[#D46726]">.</span>
             </h2>
-
-            {/* Small blue underline */}
-
-         
-
           </div>
 
-          <p className="max-w-[520px] text-[13px] leading-6 text-[#596574] sm:text-[14px] sm:leading-7 lg:pb-1">
-            A multifaceted movement committed to preserving authentic
-            soundscapes, material heritage, and living community solidarity.
-          </p>
-
+          <div className="lg:ml-auto lg:max-w-[580px]">
+            <p className="font-sans text-[15px] leading-7 text-[#574239] sm:text-[16px] sm:leading-8">
+              We create spaces for Newa culture to be learned, practiced,
+              experienced, and carried forward — from traditional sounds and
+              instruments to living rituals and community traditions.
+            </p>
+          </div>
         </div>
 
         {/* =====================================================
-            CARDS
+            INITIATIVES
         ===================================================== */}
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-
+        <div className="mt-2">
           {initiatives.map((initiative, index) => {
-
             const Icon = initiative.icon;
 
             return (
               <Link
                 key={initiative.slug}
                 href={`/initiatives/${initiative.slug}`}
-                className="group relative flex min-h-[255px] flex-col overflow-hidden rounded-lg border border-[#DDE4EB] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#0B4F8A]/30 hover:shadow-[0_12px_30px_rgba(11,79,138,0.10)] sm:min-h-[270px] sm:p-6 lg:min-h-[285px] lg:p-7"
+                className="group relative grid grid-cols-[42px_1fr] gap-5 border-b border-[#DDC1B4] py-8 transition-colors duration-300 sm:grid-cols-[60px_1fr_auto] sm:gap-7 sm:py-9 lg:grid-cols-[80px_1fr_280px_auto] lg:gap-10 lg:py-10"
               >
-
-                {/* =================================================
-                    ORANGE TOP ACCENT
-                ================================================= */}
-
-
-
                 {/* =================================================
                     NUMBER
                 ================================================= */}
 
-                <div className="absolute right-5 top-5 text-[34px] font-bold leading-none text-[#0B4F8A]/10 transition-colors duration-300 group-hover:text-[#F28C28]/20 sm:right-6 sm:top-6 sm:text-[40px]">
-                  {String(index + 1).padStart(2, "0")}
+                <div className="pt-1">
+                  <span className="font-serif text-[22px] text-[#D46726] sm:text-[25px]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
 
                 {/* =================================================
-                    ICON
+                    MAIN
                 ================================================= */}
 
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-[#E8F1F8] text-[#0B4F8A] transition-all duration-300 group-hover:bg-[#0B4F8A] group-hover:text-white">
+                <div>
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center border border-[#DDC1B4] bg-[#F5F0E8] text-[#4E76A3] transition-all duration-300 group-hover:border-[#D46726] group-hover:bg-[#D46726] group-hover:text-white">
+                      <Icon size={17} strokeWidth={1.6} />
+                    </div>
 
-                  <Icon
-                    size={21}
-                    strokeWidth={1.7}
-                  />
+                    <span className="font-sans text-[9px] font-semibold uppercase tracking-[0.16em] text-[#8A7267] sm:text-[10px]">
+                      Na Lisah Initiative
+                    </span>
+                  </div>
 
+                  <h3 className="font-serif text-[25px] leading-[1.2] text-[#1C1A17] transition-colors duration-300 group-hover:text-[#D46726] sm:text-[29px] lg:text-[31px]">
+                    {initiative.title}
+                  </h3>
                 </div>
-
-                {/* =================================================
-                    TITLE
-                ================================================= */}
-
-                <h3 className="max-w-[270px] text-[20px] font-bold leading-[1.2] text-[#17243B] transition-colors duration-300 group-hover:text-[#0B4F8A] sm:text-[21px] lg:text-[22px]">
-                  {initiative.title}
-                </h3>
 
                 {/* =================================================
                     DESCRIPTION
                 ================================================= */}
 
-                <p className="mt-2.5 max-w-[390px] text-[13px] leading-[1.65] text-[#5A6471] sm:text-[14px] lg:text-[15px]">
+                <p className="col-start-2 mt-1 max-w-[600px] font-sans text-[13px] leading-6 text-[#574239] sm:col-start-2 sm:mt-0 sm:text-[14px] sm:leading-7 lg:col-start-3 lg:row-start-1 lg:mt-10 lg:max-w-[280px]">
                   {initiative.description}
                 </p>
 
                 {/* =================================================
-                    LINK
+                    ARROW
                 ================================================= */}
 
-                <div className="mt-auto pt-6">
-
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.07em] text-[#0B4F8A] transition-colors duration-300 group-hover:text-[#F28C28] sm:text-[12px]">
-
-                    {initiative.linkText}
-
-                    <ArrowRight
-                      size={15}
-                      strokeWidth={1.8}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
+                <div className="col-start-2 mt-3 flex items-center sm:col-start-3 sm:row-start-1 sm:mt-10 lg:col-start-4">
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#DDC1B4] text-[#1C1A17] transition-all duration-300 group-hover:border-[#D46726] group-hover:bg-[#D46726] group-hover:text-white">
+                    <ArrowUpRight
+                      size={17}
+                      strokeWidth={1.6}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
-
-                  </span>
-
+                  </div>
                 </div>
 
                 {/* =================================================
-                    BOTTOM ORANGE HOVER LINE
+                    HOVER LINE
                 ================================================= */}
 
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#F28C28] transition-all duration-300 group-hover:w-full" />
-
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#D46726] transition-all duration-500 group-hover:w-full" />
               </Link>
             );
-
           })}
-
         </div>
 
+        {/* =====================================================
+            BOTTOM STATEMENT
+        ===================================================== */}
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end lg:mt-16">
+          <div>
+            <p className="max-w-[700px] font-serif text-[24px] leading-[1.4] text-[#1C1A17] sm:text-[29px]">
+              Keeping tradition alive by making it part of
+              <span className="text-[#4E76A3]"> everyday community life.</span>
+            </p>
+          </div>
+
+          <Link
+            href="/initiatives"
+            className="group inline-flex w-fit items-center gap-3 border-b border-[#1C1A17] pb-2 font-sans text-[12px] font-semibold uppercase tracking-[0.08em] text-[#1C1A17] transition-colors duration-300 hover:border-[#D46726] hover:text-[#D46726]"
+          >
+            View All Initiatives
+
+            <ArrowUpRight
+              size={15}
+              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );

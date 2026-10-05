@@ -1,34 +1,44 @@
 @import "tailwindcss";
 
 /* =========================================================
-   GLOBAL FONT
-   ========================================================= */
+   DESIGN SYSTEM
+========================================================= */
 
 :root {
   --font-main: var(--font-dm-sans);
+  --font-display: var(--font-noto-serif);
 
-  --nah-blue: #0b4f8a;
-  --nah-blue-dark: #083b68;
-  --nah-blue-light: #e8f1f8;
+  --nah-orange: #d46726;
+  --nah-orange-hover: #e27d38;
 
-  --nah-orange: #f28c28;
-  --nah-orange-dark: #a85413;
-  --nah-orange-light: #fff3e6;
+  --nah-blue: #4e76a3;
+  --nah-blue-dark: #3b5d82;
 
-  --nah-navy: #14213d;
+  --nah-brass: #c29b38;
 
-  --nah-text: #4b5563;
-  --nah-border: #dde4eb;
-  --nah-background: #f7f9fc;
+  --nah-charcoal: #1c1a17;
+  --nah-charcoal-light: #2d2924;
+
+  --nah-cream: #faf8f5;
+  --nah-parchment: #f5f0e8;
+
+  --nah-text: #574239;
+  --nah-muted: #8a7267;
+
+  --nah-border: #ddc1b4;
 }
 
 /* =========================================================
-   BODY
-   ========================================================= */
+   HTML
+========================================================= */
 
 html {
   scroll-behavior: smooth;
 }
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body {
   margin: 0;
@@ -36,83 +46,88 @@ body {
 
   font-family: var(--font-main), sans-serif;
 
-  background: #ffffff;
-  color: var(--nah-navy);
+  background: var(--nah-cream);
+  color: var(--nah-charcoal);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* =========================================================
-   GLOBAL CONTENT CONTAINER
-   ========================================================= */
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), serif;
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: var(--nah-orange);
+  color: white;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .site-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1360px;
 
   margin-left: auto;
   margin-right: auto;
 
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (min-width: 640px) {
   .site-container {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
 @media (min-width: 1024px) {
   .site-container {
-    padding-left: 56px;
-    padding-right: 56px;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }
 
 /* =========================================================
-   FADE UP ANIMATION
-   ========================================================= */
+   SCROLLBAR
+========================================================= */
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.animate-fade-up {
-  animation: fade-up 0.8s ease-out both;
+::-webkit-scrollbar-track {
+  background: var(--nah-cream);
 }
 
-/* =========================================================
-   OPTIONAL DELAYS
-   ========================================================= */
-
-.animate-delay-100 {
-  animation-delay: 100ms;
+::-webkit-scrollbar-thumb {
+  background: #c9b4a8;
 }
 
-.animate-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animate-delay-300 {
-  animation-delay: 300ms;
-}
-
-/* =========================================================
-   SELECTION
-   ========================================================= */
-
-::selection {
-  background: var(--nah-blue);
-  color: white;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nah-orange);
 }
