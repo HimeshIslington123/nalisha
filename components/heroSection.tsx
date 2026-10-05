@@ -52,9 +52,7 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    const interval = setInterval(nextSlide, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -62,10 +60,10 @@ export default function Hero() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-[calc(100vh-80px)] min-h-[600px] w-full overflow-hidden bg-[#14213D]">
+    <section className="relative h-[calc(100svh-72px)] min-h-[620px] w-full overflow-hidden bg-[#071827] sm:min-h-[600px]">
 
       {/* =====================================================
-          BACKGROUND IMAGES
+          BACKGROUND SLIDES
       ===================================================== */}
 
       {slides.map((item, index) => (
@@ -78,84 +76,79 @@ export default function Hero() {
           <img
             src={item.image}
             alt={item.label}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-center"
           />
         </div>
       ))}
 
       {/* =====================================================
-          CONTROLLED OVERLAY
-
-          Instead of putting black/45 over the entire image,
-          the left side is darker for readability while the
-          right side remains much more visible.
+          DESKTOP OVERLAY
       ===================================================== */}
 
-<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/10" />
 
-      {/* Subtle overall tint */}
+      {/* =====================================================
+          MOBILE BOTTOM OVERLAY
+      ===================================================== */}
 
+      <div className="absolute inset-0 bg-gradient-to-t from-[#06131f]/90 via-[#06131f]/25 to-black/5 sm:hidden" />
+
+      {/* Subtle blue tint */}
       <div className="absolute inset-0 bg-[#0B4F8A]/10" />
 
       {/* Bottom fade */}
-
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#071827]/75 via-[#071827]/25 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#06131f]/80 to-transparent" />
 
       {/* =====================================================
           CONTENT
+          Bottom aligned on BOTH mobile and desktop
       ===================================================== */}
 
-      <div className="relative z-10 flex h-full items-center">
-
+      <div className="absolute inset-x-0 bottom-0 z-10 pb-24 sm:pb-28">
         <div className="site-container">
 
           <div className="max-w-[800px]">
 
             {/* =================================================
                 LABEL
+                Same transparent rounded style everywhere
             ================================================= */}
 
             <div
               key={`label-${current}`}
-              className="mb-5 inline-flex animate-fade-up items-center gap-2 rounded-md border border-white/20 bg-[#0B4F8A]/75 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur-md sm:text-xs"
+              className="mb-4 inline-flex animate-fade-up items-center rounded-full border border-white/25 bg-black/20 px-3.5 py-1.5 text-[9px] font-semibold uppercase tracking-[0.13em] text-white shadow-lg backdrop-blur-md sm:mb-5 sm:px-4 sm:py-2 sm:text-xs"
             >
-              {/* Orange accent */}
-
-     
-
               {slide.label}
             </div>
 
             {/* =================================================
                 QUOTE
-
-                No font-serif.
-                Uses the same global font as the rest of site.
             ================================================= */}
 
             <h1
               key={`quote-${current}`}
-              className="max-w-[780px] animate-fade-up text-[38px] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:text-[48px] md:text-[58px] lg:text-[66px]"
+              className="max-w-[780px] animate-fade-up text-[34px] font-bold leading-[1.08] tracking-[-0.035em] text-white sm:text-[48px] md:text-[58px] lg:text-[66px]"
             >
               {slide.quote}
             </h1>
 
             {/* =================================================
-                ORANGE UNDERLINE
+                ORANGE LINE
             ================================================= */}
 
             <div
               key={`line-${current}`}
-              className="mt-6 h-[3px] w-14 animate-fade-up rounded-full bg-[#F28C28]"
+              className="mt-5 h-[3px] w-12 animate-fade-up rounded-full bg-[#F28C28] sm:mt-6 sm:w-14"
             />
 
             {/* =================================================
                 DESCRIPTION
+                Hidden on mobile
             ================================================= */}
 
             <p
               key={`description-${current}`}
-              className="mt-6 max-w-[700px] animate-fade-up text-[14px] leading-7 text-white/85 sm:text-[16px] sm:leading-8"
+              className="mt-6 hidden max-w-[700px] animate-fade-up text-[16px] leading-8 text-white/85 sm:block"
             >
               {slide.description}
             </p>
@@ -166,39 +159,35 @@ export default function Hero() {
 
             <button
               key={`button-${current}`}
-              className="group mt-8 inline-flex items-center gap-2 animate-fade-up rounded-md bg-[#0B4F8A] px-6 py-3.5 text-[13px] font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#F28C28] hover:shadow-xl active:scale-95 sm:px-7 sm:py-4 sm:text-sm"
+              className="group mt-7 inline-flex animate-fade-up items-center gap-2 rounded-full border border-[#F28C28] bg-[#F28C28] px-5 py-3 text-[12px] font-semibold text-white shadow-lg transition-all duration-300 hover:bg-transparent hover:text-[#F28C28] active:scale-95 sm:mt-8 sm:px-7 sm:py-4 sm:text-sm"
             >
               {slide.button}
 
               <ArrowRight
-                size={16}
-                strokeWidth={1.8}
-                className="transition-transform duration-300 group-hover:translate-x-1"
+                size={15}
+                strokeWidth={2}
+                className="transition-transform duration-300 group-hover:translate-x-1 sm:h-4 sm:w-4"
               />
             </button>
 
           </div>
-
         </div>
-
       </div>
 
       {/* =====================================================
           BOTTOM CONTROLS
       ===================================================== */}
 
-      <div className="absolute bottom-7 left-0 right-0 z-20">
-
+      <div className="absolute bottom-5 left-0 right-0 z-20 sm:bottom-7">
         <div className="site-container">
 
           <div className="flex items-center justify-between">
 
             {/* =================================================
-                INDICATORS
+                SLIDE INDICATORS
             ================================================= */}
 
-            <div className="flex items-center gap-2">
-
+            <div className="flex items-center gap-1.5">
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -206,50 +195,47 @@ export default function Hero() {
                   aria-label={`Go to slide ${index + 1}`}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
                     index === current
-                      ? "w-12 bg-[#F28C28]"
-                      : "w-3 bg-white/45 hover:bg-white/75"
+                      ? "w-8 bg-[#F28C28] sm:w-12"
+                      : "w-1.5 bg-white/50 hover:bg-white/80"
                   }`}
                 />
               ))}
-
             </div>
 
             {/* =================================================
                 ARROWS
             ================================================= */}
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
 
               <button
                 onClick={previousSlide}
                 aria-label="Previous slide"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#0B4F8A]/45 text-white backdrop-blur-md transition-all duration-300 hover:border-[#F28C28] hover:bg-[#F28C28] sm:h-12 sm:w-12"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:border-[#F28C28] hover:bg-[#F28C28] sm:h-12 sm:w-12"
               >
                 <ArrowLeft
-                  size={18}
+                  size={15}
                   strokeWidth={1.8}
-                  className="transition-transform duration-300 group-hover:-translate-x-0.5"
+                  className="transition-transform duration-300 group-hover:-translate-x-0.5 sm:h-[18px] sm:w-[18px]"
                 />
               </button>
 
               <button
                 onClick={nextSlide}
                 aria-label="Next slide"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#0B4F8A]/45 text-white backdrop-blur-md transition-all duration-300 hover:border-[#F28C28] hover:bg-[#F28C28] sm:h-12 sm:w-12"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:border-[#F28C28] hover:bg-[#F28C28] sm:h-12 sm:w-12"
               >
                 <ArrowRight
-                  size={18}
+                  size={15}
                   strokeWidth={1.8}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5"
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 sm:h-[18px] sm:w-[18px]"
                 />
               </button>
 
             </div>
 
           </div>
-
         </div>
-
       </div>
 
     </section>
