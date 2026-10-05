@@ -1,31 +1,59 @@
 @import "tailwindcss";
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
+/* =========================================================
+   GLOBAL FONT
+   ========================================================= */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:root {
+  --font-main: var(--font-dm-sans);
+
+  --nah-blue: #0b4f8a;
+  --nah-blue-dark: #083b68;
+  --nah-blue-light: #e8f1f8;
+
+  --nah-orange: #f28c28;
+  --nah-orange-dark: #a85413;
+  --nah-orange-light: #fff3e6;
+
+  --nah-navy: #14213d;
+
+  --nah-text: #4b5563;
+  --nah-border: #dde4eb;
+  --nah-background: #f7f9fc;
 }
 
-.animate-fade-up {
-  animation: fade-up 0.8s ease-out both;
+/* =========================================================
+   BODY
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* =====================================================
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-main), sans-serif;
+
+  background: #ffffff;
+  color: var(--nah-navy);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
    GLOBAL CONTENT CONTAINER
-   Use this for every main website section
-   ===================================================== */
+   ========================================================= */
 
 .site-container {
   width: 100%;
   max-width: 1400px;
+
   margin-left: auto;
   margin-right: auto;
+
   padding-left: 24px;
   padding-right: 24px;
 }
@@ -42,4 +70,49 @@
     padding-left: 56px;
     padding-right: 56px;
   }
+}
+
+/* =========================================================
+   FADE UP ANIMATION
+   ========================================================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+/* =========================================================
+   OPTIONAL DELAYS
+   ========================================================= */
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--nah-blue);
+  color: white;
 }

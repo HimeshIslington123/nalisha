@@ -10,16 +10,31 @@ export default function WhatWeDo() {
         {/* =====================================================
             HEADER
         ===================================================== */}
+
         <div className="mb-8 flex flex-col gap-4 sm:mb-10 lg:flex-row lg:items-end lg:justify-between">
 
           <div>
-            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#0B4F8A] sm:text-[11px]">
-              हाम्रो कार्यक्षेत्र 
-            </p>
 
-            <h2 className="font-serif text-[34px] font-medium leading-[1.1] tracking-[-0.02em] text-[#17243B] sm:text-[40px] lg:text-[44px]">
+            {/* Orange + Blue eyebrow */}
+
+            <div className="mb-3 flex items-center gap-2">
+
+              <span className="h-[2px] w-7 bg-[#F28C28]" />
+
+              <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#A85413] sm:text-[11px]">
+                हाम्रो कार्यक्षेत्र
+              </span>
+
+            </div>
+
+            <h2 className="text-[34px] font-bold leading-[1.1] tracking-[-0.02em] text-[#17243B] sm:text-[40px] lg:text-[44px]">
               What We Do
             </h2>
+
+            {/* Small blue underline */}
+
+         
+
           </div>
 
           <p className="max-w-[520px] text-[13px] leading-6 text-[#596574] sm:text-[14px] sm:leading-7 lg:pb-1">
@@ -32,45 +47,59 @@ export default function WhatWeDo() {
         {/* =====================================================
             CARDS
         ===================================================== */}
+
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
 
           {initiatives.map((initiative, index) => {
+
             const Icon = initiative.icon;
 
             return (
               <Link
                 key={initiative.slug}
                 href={`/initiatives/${initiative.slug}`}
-                className="group relative flex min-h-[255px] flex-col rounded-lg border border-[#DDE4EB] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#0B4F8A]/20 hover:shadow-[0_12px_30px_rgba(11,79,138,0.08)] sm:min-h-[270px] sm:p-6 lg:min-h-[285px] lg:p-7"
+                className="group relative flex min-h-[255px] flex-col overflow-hidden rounded-lg border border-[#DDE4EB] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#0B4F8A]/30 hover:shadow-[0_12px_30px_rgba(11,79,138,0.10)] sm:min-h-[270px] sm:p-6 lg:min-h-[285px] lg:p-7"
               >
+
+                {/* =================================================
+                    ORANGE TOP ACCENT
+                ================================================= */}
+
+
 
                 {/* =================================================
                     NUMBER
                 ================================================= */}
-                <div className="absolute right-5 top-5 font-serif text-[34px] font-medium leading-none text-[#0B4F8A]/10 transition-colors duration-300 group-hover:text-[#F28C28]/20 sm:right-6 sm:top-6 sm:text-[40px]">
+
+                <div className="absolute right-5 top-5 text-[34px] font-bold leading-none text-[#0B4F8A]/10 transition-colors duration-300 group-hover:text-[#F28C28]/20 sm:right-6 sm:top-6 sm:text-[40px]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
                 {/* =================================================
                     ICON
                 ================================================= */}
+
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-[#E8F1F8] text-[#0B4F8A] transition-all duration-300 group-hover:bg-[#0B4F8A] group-hover:text-white">
+
                   <Icon
                     size={21}
                     strokeWidth={1.7}
                   />
+
                 </div>
 
                 {/* =================================================
                     TITLE
                 ================================================= */}
-                <h3 className="max-w-[270px] font-serif text-[20px] font-semibold leading-[1.2] text-[#17243B] transition-colors duration-300 group-hover:text-[#0B4F8A] sm:text-[21px] lg:text-[22px]">
+
+                <h3 className="max-w-[270px] text-[20px] font-bold leading-[1.2] text-[#17243B] transition-colors duration-300 group-hover:text-[#0B4F8A] sm:text-[21px] lg:text-[22px]">
                   {initiative.title}
                 </h3>
 
                 {/* =================================================
                     DESCRIPTION
                 ================================================= */}
+
                 <p className="mt-2.5 max-w-[390px] text-[13px] leading-[1.65] text-[#5A6471] sm:text-[14px] lg:text-[15px]">
                   {initiative.description}
                 </p>
@@ -78,8 +107,11 @@ export default function WhatWeDo() {
                 {/* =================================================
                     LINK
                 ================================================= */}
+
                 <div className="mt-auto pt-6">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.07em] text-[#0B4F8A] transition-colors duration-300 group-hover:text-[#F28C28] sm:text-[12px]">
+
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.07em] text-[#0B4F8A] transition-colors duration-300 group-hover:text-[#F28C28] sm:text-[12px]">
+
                     {initiative.linkText}
 
                     <ArrowRight
@@ -87,11 +119,20 @@ export default function WhatWeDo() {
                       strokeWidth={1.8}
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
+
                   </span>
+
                 </div>
+
+                {/* =================================================
+                    BOTTOM ORANGE HOVER LINE
+                ================================================= */}
+
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#F28C28] transition-all duration-300 group-hover:w-full" />
 
               </Link>
             );
+
           })}
 
         </div>

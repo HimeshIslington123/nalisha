@@ -52,8 +52,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top accent line */}
-      <div className="h-1 w-full bg-gradient-to-r from-[#0B4F8A] via-[#F28C28] to-[#0B4F8A]" />
+   
 
       <nav className="sticky top-0 z-50 w-full border-b border-[#0B4F8A]/10 bg-white/95 shadow-sm backdrop-blur-md">
         <div className="mx-auto flex h-[82px] max-w-[1500px] items-center justify-between px-5 sm:px-8 lg:px-12">
