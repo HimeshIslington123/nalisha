@@ -4,30 +4,30 @@ import { initiatives } from "@/data/initiatives";
 
 export default function WhatWeDo() {
   return (
-    <section className="bg-[#F8F7FC] py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
+    <section className="bg-[#F8F7FC] py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-[1380px] px-4 sm:px-7 lg:px-10">
 
-        {/* ================= HEADER ================= */}
-        <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
+        {/* HEADER */}
+        <div className="mb-7 flex flex-col gap-3 sm:mb-9 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
 
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#0B4F8A]">
+            <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#0B4F8A] sm:text-xs">
               हाम्रो कार्यक्षेत्र • CORE INITIATIVES
             </p>
 
-            <h2 className="font-serif text-4xl font-medium tracking-tight text-[#17243B] sm:text-5xl lg:text-[52px]">
+            <h2 className="font-serif text-[30px] font-medium leading-tight text-[#17243B] sm:text-[38px] lg:text-[42px]">
               What We Do
             </h2>
           </div>
 
-          <p className="max-w-[600px] text-base leading-7 text-[#53606F] sm:text-lg sm:leading-8 lg:ml-auto">
+          <p className="max-w-[520px] text-[13px] leading-5 text-[#596574] sm:text-[15px] sm:leading-7 lg:pb-1">
             A multifaceted movement committed to preserving authentic
             soundscapes, material heritage, and living community solidarity.
           </p>
         </div>
 
-        {/* ================= CARDS ================= */}
-        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+        {/* CARDS */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-5">
           {initiatives.map((initiative) => {
             const Icon = initiative.icon;
 
@@ -35,31 +35,35 @@ export default function WhatWeDo() {
               <Link
                 key={initiative.slug}
                 href={`/initiatives/${initiative.slug}`}
-                className="group flex min-h-[330px] flex-col rounded-xl border border-[#E9E7EE] bg-white p-8 shadow-[0_2px_10px_rgba(23,36,59,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B4F8A]/20 hover:shadow-[0_15px_40px_rgba(11,79,138,0.10)] sm:p-9"
+                className="group flex min-h-[245px] flex-col rounded-md border border-[#E7E5EC] bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#0B4F8A]/20 hover:shadow-[0_10px_30px_rgba(11,79,138,0.08)] sm:min-h-[275px] sm:rounded-lg sm:p-6 lg:min-h-[285px] lg:p-7"
               >
-                {/* Icon */}
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-md bg-[#DCECF6] text-[#0B4F8A] transition-all duration-300 group-hover:bg-[#0B4F8A] group-hover:text-white">
-                  <Icon size={27} strokeWidth={1.8} />
+                {/* ICON */}
+                <div className="mb-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-[4px] bg-[#DCECF6] text-[#0B4F8A] transition-all duration-300 group-hover:bg-[#0B4F8A] group-hover:text-white sm:mb-5 sm:h-11 sm:w-11">
+                  <Icon
+                    size={18}
+                    strokeWidth={1.8}
+                    className="sm:h-[21px] sm:w-[21px]"
+                  />
                 </div>
 
-                {/* Title */}
-                <h3 className="font-serif text-[25px] font-semibold leading-tight text-[#17243B] transition-colors duration-300 group-hover:text-[#0B4F8A]">
+                {/* TITLE */}
+                <h3 className="font-serif text-[16px] font-semibold leading-[1.2] text-[#17243B] transition-colors duration-300 group-hover:text-[#0B4F8A] sm:text-[21px] sm:leading-[1.2] lg:text-[22px]">
                   {initiative.title}
                 </h3>
 
-                {/* Description */}
-                <p className="mt-2.5 text-[16px] leading-7 text-[#5A6471]">
+                {/* DESCRIPTION */}
+                <p className="mt-2 text-[11px] leading-[1.55] text-[#5A6471] sm:mt-2.5 sm:text-[14px] sm:leading-6 lg:text-[15px] lg:leading-[1.65]">
                   {initiative.description}
                 </p>
 
-                {/* Bottom link */}
-                <div className="mt-auto pt-7">
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.05em] text-[#0B4F8A]">
+                {/* LINK */}
+                <div className="mt-auto pt-4 sm:pt-5">
+                  <span className="inline-flex items-center gap-1 text-[9px] font-semibold tracking-[0.04em] text-[#0B4F8A] sm:gap-1.5 sm:text-[12px] sm:tracking-[0.06em] lg:text-[13px]">
                     {initiative.linkText}
 
                     <ArrowRight
-                      size={17}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
+                      size={12}
+                      className="shrink-0 transition-transform duration-300 group-hover:translate-x-1 sm:h-[15px] sm:w-[15px]"
                     />
                   </span>
                 </div>
