@@ -24,7 +24,7 @@ export default function WhatWeDo() {
               </span>
             </div>
 
-            <h2 className="font-serif text-[36px] leading-[1.1] tracking-[-0.015em] sm:text-[52px] text-[#1C1A17] ">
+            <h2 className="font-serif text-[36px] leading-[1.1] tracking-[-0.015em] text-[#1C1A17] sm:text-[52px]">
               What We Do
               <span className="text-[#D46726]">.</span>
             </h2>
@@ -36,6 +36,45 @@ export default function WhatWeDo() {
               experienced, and carried forward — from traditional sounds and
               instruments to living rituals and community traditions.
             </p>
+
+            {/* View All Initiatives */}
+            {/* <Link
+              href="/initiatives"
+              className="
+                group
+                mt-6
+                inline-flex
+                w-fit
+                items-center
+                gap-3
+                border-b
+                border-[#1C1A17]
+                pb-2
+                font-sans
+                text-[11px]
+                font-semibold
+                uppercase
+                tracking-[0.08em]
+                text-[#1C1A17]
+                transition-colors
+                duration-300
+                hover:border-[#D46726]
+                hover:text-[#D46726]
+              "
+            >
+              View All Initiatives
+
+              <ArrowUpRight
+                size={15}
+                strokeWidth={1.7}
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                  group-hover:-translate-y-1
+                "
+              />
+            </Link> */}
           </div>
         </div>
 
@@ -252,59 +291,6 @@ export default function WhatWeDo() {
               </Link>
             );
           })}
-        </div>
-
-        {/* =====================================================
-            BOTTOM STATEMENT
-        ===================================================== */}
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end lg:mt-16">
-          <div>
-            <p className="max-w-[700px] font-serif text-[24px] leading-[1.4] text-[#1C1A17] sm:text-[29px]">
-              Keeping tradition alive by making it part of
-              <span className="text-[#4E76A3]">
-                {" "}
-                everyday community life.
-              </span>
-            </p>
-          </div>
-
-          <Link
-            href="/initiatives"
-            className="
-              group
-              inline-flex
-              w-fit
-              items-center
-              gap-3
-              border-b
-              border-[#1C1A17]
-              pb-2
-              font-sans
-              text-[12px]
-              font-semibold
-              uppercase
-              tracking-[0.08em]
-              text-[#1C1A17]
-              transition-colors
-              duration-300
-
-              hover:border-[#D46726]
-              hover:text-[#D46726]
-            "
-          >
-            View All Initiatives
-
-            <ArrowUpRight
-              size={15}
-              className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-                group-hover:-translate-y-1
-              "
-            />
-          </Link>
         </div>
       </div>
     </section>
