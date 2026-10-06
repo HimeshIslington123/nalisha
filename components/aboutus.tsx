@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -63,47 +64,55 @@ export default function AboutUs() {
   return (
     <main className="bg-[#FAF8F5] text-[#1C1A17]">
       {/* =====================================================
-          HERO
+          HERO / ABOUT US
       ===================================================== */}
 
       <section className="relative overflow-hidden border-b border-[#DDC1B4]">
-        {/* subtle orange glow */}
+        {/* Orange glow */}
         <div className="pointer-events-none absolute -right-32 top-10 h-80 w-80 rounded-full bg-[#D46726]/[0.06] blur-3xl" />
 
-        {/* subtle blue glow */}
+        {/* Blue glow */}
         <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-[#4E76A3]/[0.06] blur-3xl" />
 
-        <div className="relative mx-auto max-w-[1360px] px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:px-12 lg:pb-28 lg:pt-24">
-          <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
-            {/* LEFT */}
+        <div className="relative mx-auto max-w-[1360px] px-5 pb-12 pt-14 sm:px-8 sm:pb-24 sm:pt-20 lg:px-12 lg:pb-28 lg:pt-24">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+            {/* =================================================
+                LEFT CONTENT
+            ================================================= */}
 
             <div>
-              <div className="mb-8 flex items-center gap-4">
-                <span className="h-px w-12 bg-[#D46726]" />
+              {/* Section label */}
+              <div className="mb-7 flex items-center gap-4 sm:mb-8">
+                <span className="h-px w-10 bg-[#D46726] sm:w-12" />
 
-                <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8A7267]">
+                <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D46726] sm:text-[11px] sm:tracking-[0.22em]">
                   About Na Lisah
                 </span>
               </div>
 
-              <h1 className="max-w-[850px] font-serif text-[42px] leading-[1.06] tracking-[-0.02em] sm:text-[56px] lg:text-[70px]">
+              {/* Heading */}
+              <h1 className="max-w-[850px] font-serif text-[40px] leading-[1.06] tracking-[-0.02em] sm:text-[56px] lg:text-[70px]">
                 Keeping our heritage
                 <span className="block text-[#D46726]">
-                  alive, together.
+                  alive,
+                  <span className="text-[#4E76A3]"> together.</span>
                 </span>
               </h1>
 
-              <p className="mt-7 max-w-[680px] font-sans text-[16px] leading-8 text-[#574239] sm:text-[18px]">
+              {/* Description */}
+              <p className="mt-6 max-w-[680px] font-sans text-[15px] leading-7 text-[#574239] sm:mt-7 sm:text-[18px] sm:leading-8">
                 Na Lisah Sanskritik Pucha is a youth-led cultural initiative
                 rooted in the Kathmandu Valley, working to preserve and
                 celebrate Newa music, traditional instruments, jatras, rituals,
                 dance, and ancestral traditions.
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-5">
+              {/* Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-4 sm:mt-9 sm:gap-5">
+                {/* Primary button */}
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 bg-[#D46726] px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-all duration-300 hover:bg-[#E27D38]"
+                  className="group inline-flex items-center gap-3 bg-[#D46726] px-5 py-3.5 font-sans text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#B9531E] sm:px-6 sm:text-[13px]"
                 >
                   Connect With Us
 
@@ -113,9 +122,10 @@ export default function AboutUs() {
                   />
                 </Link>
 
+                {/* Secondary link */}
                 <Link
                   href="/gallery"
-                  className="group inline-flex items-center gap-3 border-b border-[#1C1A17] px-1 py-3 font-sans text-[13px] font-semibold text-[#1C1A17] transition-colors duration-300 hover:border-[#D46726] hover:text-[#D46726]"
+                  className="group inline-flex items-center gap-3 border-b border-[#1C1A17] px-1 py-3 font-sans text-[12px] font-semibold text-[#1C1A17] transition-colors duration-300 hover:border-[#4E76A3] hover:text-[#4E76A3] sm:text-[13px]"
                 >
                   Explore Our Heritage
 
@@ -127,14 +137,20 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* LOGO */}
+            {/* =================================================
+                LOGO AREA
+            ================================================= */}
 
-            <div className="mx-auto w-full max-w-[420px] lg:ml-auto">
-              <div className="relative border border-[#DDC1B4] bg-[#F5F0E8] px-8 py-10 sm:px-12 sm:py-14">
-                {/* orange accent */}
+            <div className="mx-auto w-full max-w-[420px]">
+              {/* =================================================
+                  DESKTOP / TABLET LOGO
+              ================================================= */}
+
+              <div className="relative hidden border border-[#DDC1B4] bg-[#F5F0E8] px-8 py-10 sm:block sm:px-12 sm:py-14">
+                {/* Orange accent */}
                 <div className="absolute left-0 top-0 h-1 w-24 bg-[#D46726]" />
 
-                {/* blue accent */}
+                {/* Blue accent */}
                 <div className="absolute bottom-0 right-0 h-1 w-24 bg-[#4E76A3]" />
 
                 <img
@@ -153,63 +169,141 @@ export default function AboutUs() {
                   </p>
                 </div>
               </div>
+
+              {/* =================================================
+                  MOBILE LOGO
+              ================================================= */}
+
+              <div className="mt-9 flex items-center justify-center gap-4 border-t border-[#DDC1B4] pt-6 sm:hidden">
+                <div className="relative shrink-0">
+                  {/* Orange accent */}
+                  <div className="absolute -left-1 -top-1 h-2 w-5 bg-[#D46726]" />
+
+                  {/* Blue accent */}
+                  <div className="absolute -bottom-1 -right-1 h-2 w-5 bg-[#4E76A3]" />
+
+                  <img
+                    src="/logo.webp"
+                    alt="Na Lisah Sanskritik Pucha"
+                    className="h-[68px] w-[68px] object-contain"
+                  />
+                </div>
+
+                <div>
+                  <p className="font-serif text-[20px] leading-none text-[#1C1A17]">
+                    Na Lisah
+                  </p>
+
+                  <p className="mt-2 font-sans text-[9px] font-semibold uppercase tracking-[0.16em] text-[#8A7267]">
+                    Sanskritik Pucha
+                  </p>
+
+                  <p className="mt-2 font-serif text-[13px] text-[#D46726]">
+                    संस्कृति हाम्रो पहिचान
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-   
-
-     
-
       {/* =====================================================
-          MISSION
+          OUR MISSION
       ===================================================== */}
 
-      <section className="bg-[#F5F0E8] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12">
-          <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-24">
-            <div>
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D46726]">
-                Our Mission
-              </span>
+      <section className="relative overflow-hidden bg-[#F5F0E8] py-16 sm:py-24 lg:py-28">
+        {/* subtle orange glow */}
+        <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[#D46726]/[0.045] blur-3xl" />
 
-              <h2 className="mt-5 max-w-[700px] font-serif text-[38px] leading-[1.1] sm:text-[52px]">
+        {/* subtle blue glow */}
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-[#4E76A3]/[0.045] blur-3xl" />
+
+        <div className="relative mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-24">
+            {/* =================================================
+                LEFT — MISSION
+            ================================================= */}
+
+            <div>
+              {/* Mission label */}
+              <div className="flex items-center gap-4">
+                <span className="h-px w-10 bg-[#D46726] sm:w-12" />
+
+                <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D46726] sm:text-[11px] sm:tracking-[0.22em]">
+                  Our Mission
+                </span>
+              </div>
+
+              {/* Mission heading */}
+              <h2 className="mt-5 max-w-[700px] font-serif text-[36px] leading-[1.1] tracking-[-0.015em] sm:text-[52px]">
                 To keep Newa heritage
-                <span className="text-[#4E76A3]"> moving forward.</span>
+                <span className="block">
+                  <span className="text-[#D46726]">moving</span>{" "}
+                  <span className="text-[#4E76A3]">forward.</span>
+                </span>
               </h2>
 
-              <p className="mt-7 max-w-[650px] font-sans text-[15px] leading-8 text-[#574239] sm:text-[16px]">
+              {/* Mission paragraph */}
+              <p className="mt-6 max-w-[650px] font-sans text-[15px] leading-7 text-[#574239] sm:mt-7 sm:text-[16px] sm:leading-8">
                 We aim to create opportunities for people to learn, perform,
                 document, and participate in the cultural traditions that
                 shape our identity.
               </p>
 
-              <p className="mt-5 max-w-[650px] font-sans text-[15px] leading-8 text-[#574239] sm:text-[16px]">
+              {/* Mission paragraph */}
+              <p className="mt-4 max-w-[650px] font-sans text-[15px] leading-7 text-[#574239] sm:mt-5 sm:text-[16px] sm:leading-8">
                 By connecting generations and creating meaningful cultural
                 experiences, we hope to ensure that the traditions of our
                 ancestors remain a living part of our future.
               </p>
             </div>
 
-            <div className="border-l-2 border-[#D46726] pl-7 sm:pl-10">
+            {/* =================================================
+                RIGHT — QUOTE
+            ================================================= */}
+
+            <div className="border-l-2 border-[#D46726] pl-6 sm:pl-10">
+              {/* Quote icon */}
               <Quote
-                size={32}
+                size={30}
                 strokeWidth={1.2}
                 className="mb-5 text-[#D46726]"
               />
 
-              <p className="font-serif text-[25px] leading-[1.45] text-[#1C1A17] sm:text-[32px]">
-                “Our heritage is not behind us. It is something we carry with
-                us.”
+              {/* Quote */}
+              <p className="font-serif text-[24px] leading-[1.45] text-[#1C1A17] sm:text-[32px]">
+                “पुर्खाले दिएको सम्पदा, हाम्रो पहिचान; यसलाई जोगाउनु हाम्रो पुस्ताको दायित्व।”
               </p>
 
-              <div className="mt-7 flex items-center gap-3">
-                <span className="h-px w-8 bg-[#4E76A3]" />
+              {/* =================================================
+                  NA LISAH SIGNATURE
+              ================================================= */}
 
-                <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8A7267]">
-                  Na Lisah
-                </span>
+              <div className="mt-7 flex items-center gap-3">
+                {/* Circular group photo */}
+                <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#DDC1B4] bg-[#FAF8F5]">
+                  <img
+                    src="/digital.png"
+                    alt="Na Lisah community"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+
+                {/* Name */}
+                <div>
+                  <p className="font-serif text-[16px] leading-none text-[#1C1A17]">
+                    Na Lisah
+                  </p>
+
+                  <div className="mt-1 flex items-center gap-2">
+                    <span className="h-px w-5 bg-[#4E76A3]" />
+
+                    <span className="font-sans text-[9px] font-semibold uppercase tracking-[0.16em] text-[#8A7267]">
+                      Sanskritik Pucha
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -219,13 +313,18 @@ export default function AboutUs() {
       {/* =====================================================
           JOURNEY
       ===================================================== */}
-{/* 
+
+      {/*
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12">
           <div className="mb-14">
-            <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D46726]">
-              Our Journey
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="h-px w-12 bg-[#D46726]" />
+
+              <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D46726]">
+                Our Journey
+              </span>
+            </div>
 
             <h2 className="mt-5 font-serif text-[36px] leading-[1.1] sm:text-[48px]">
               Beginning with a purpose.
@@ -255,13 +354,15 @@ export default function AboutUs() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
+      */}
 
       {/* =====================================================
           FINAL CTA
       ===================================================== */}
 
-      {/* <section className="bg-[#1C1A17] py-20 text-[#FAF8F5] sm:py-24 lg:py-28">
+      {/*
+      <section className="bg-[#1C1A17] py-20 text-[#FAF8F5] sm:py-24 lg:py-28">
         <div className="mx-auto max-w-[900px] px-5 text-center sm:px-8">
           <div className="mx-auto mb-7 h-1 w-12 bg-[#D46726]" />
 
@@ -279,7 +380,7 @@ export default function AboutUs() {
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 bg-[#D46726] px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-colors duration-300 hover:bg-[#E27D38]"
+              className="group inline-flex items-center gap-3 bg-[#D46726] px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-colors duration-300 hover:bg-[#B9531E]"
             >
               Join Our Community
 
@@ -291,13 +392,14 @@ export default function AboutUs() {
 
             <Link
               href="/events"
-              className="inline-flex items-center gap-3 border border-white/20 px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-colors duration-300 hover:border-[#D46726] hover:text-[#D46726]"
+              className="inline-flex items-center gap-3 border border-white/20 px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-colors duration-300 hover:border-[#4E76A3] hover:text-[#4E76A3]"
             >
               See Our Events
             </Link>
           </div>
         </div>
-      </section> */}
+      </section>
+      */}
     </main>
   );
 }

@@ -14,7 +14,7 @@ const page = () => {
    <Hero></Hero>
 <AboutUs></AboutUs>
    <WhatWeDo></WhatWeDo>
-   <MeetOurTeam></MeetOurTeam>
+
    <Partnerships></Partnerships>
 
  <Footer></Footer>

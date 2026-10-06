@@ -1,20 +1,12 @@
-import {
-  Music2,
-  Landmark,
-  Drama,
-  BookOpen,
-  Users,
-  Megaphone,
-  type LucideIcon,
-} from "lucide-react";
-
 export type Initiative = {
   slug: string;
   title: string;
   shortTitle: string;
   description: string;
   linkText: string;
-  icon: LucideIcon;
+
+  // Initiative image
+  image: string;
 
   fullDescription: string;
 
@@ -31,10 +23,13 @@ export const initiatives: Initiative[] = [
     slug: "dhime-traditional-music",
     title: "Dhime & Traditional Music",
     shortTitle: "Dhime & Traditional Music",
+
     description:
       "Systematic teaching of complex Newari rhythmic talas, ensuring centuries of acoustic wisdom are faithfully mastered by new players.",
+
     linkText: "Weekly Rehearsals",
-    icon: Music2,
+
+    image: "/dhime.png",
 
     fullDescription:
       "Dhime music is one of the most powerful expressions of Newar cultural identity. Through regular practice, structured learning, and community participation, we work to ensure that traditional rhythms continue to be understood and performed by younger generations.",
@@ -70,10 +65,13 @@ export const initiatives: Initiative[] = [
     slug: "jatra-festival-rites",
     title: "Jātrā & Festival Rites",
     shortTitle: "Jātrā & Festival Rites",
+
     description:
       "Mobilizing large ensembles for Indra Jātrā, Bisket Jātrā, and local Tole processions, keeping ancient streets resounding with live rhythm.",
+
     linkText: "Chariot & Processions",
-    icon: Landmark,
+
+    image: "/kumari.png",
 
     fullDescription:
       "Newar festivals are living expressions of history, spirituality, music, community, and identity. We participate in and support traditional Jātrās and processions that bring communities together.",
@@ -109,10 +107,13 @@ export const initiatives: Initiative[] = [
     slug: "cultural-performances",
     title: "Cultural Performances",
     shortTitle: "Cultural Performances",
+
     description:
       "Presenting authentic Newari art forms, Jyāpu farming songs, and traditional ritual dances on municipal, national, and academic stages.",
+
     linkText: "Artistic Exhibitions",
-    icon: Drama,
+
+    image: "/gunla.png",
 
     fullDescription:
       "Cultural performance gives traditional knowledge a living stage. We present Newari music, dance, songs, and traditional art forms to audiences across different communities and institutions.",
@@ -148,10 +149,13 @@ export const initiatives: Initiative[] = [
     slug: "heritage-preservation",
     title: "Heritage Preservation",
     shortTitle: "Heritage Preservation",
+
     description:
-      "Recording oral narratives, archiving endangered compositions, and assisting conservation initiatives for historic community rest houses (*Pāṭis*).",
+      "Recording oral narratives, archiving endangered compositions, and assisting conservation initiatives for historic community rest houses (Pāṭis).",
+
     linkText: "Living Archives",
-    icon: BookOpen,
+
+    image: "/nasa.png",
 
     fullDescription:
       "Heritage exists not only in buildings and monuments, but also in stories, music, language, rituals, knowledge, and memories. Our preservation initiatives focus on keeping these living forms accessible to future generations.",
@@ -187,10 +191,13 @@ export const initiatives: Initiative[] = [
     slug: "youth-community",
     title: "Youth & Community",
     shortTitle: "Youth & Community",
+
     description:
       "Providing positive social cohesion for urban youth, instilling pride in ancestral identity, discipline, and communal responsibility.",
+
     linkText: "Tole Programs",
-    icon: Users,
+
+    image: "/group.png",
 
     fullDescription:
       "Young people are central to the future of cultural heritage. Our youth and community initiatives create opportunities for learning, participation, leadership, friendship, and cultural pride.",
@@ -226,10 +233,13 @@ export const initiatives: Initiative[] = [
     slug: "cultural-awareness",
     title: "Cultural Awareness",
     shortTitle: "Cultural Awareness",
+
     description:
       "Conducting interactive school seminars, documentary talks, and public discourses explaining the spiritual symbology of Newari festivals.",
+
     linkText: "Public Education",
-    icon: Megaphone,
+
+    image: "/kisi.png",
 
     fullDescription:
       "Cultural preservation also requires understanding. Through education and public awareness, we help people learn about the meaning, history, symbolism, and importance of Newari cultural traditions.",

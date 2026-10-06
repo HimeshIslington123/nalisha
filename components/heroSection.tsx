@@ -5,54 +5,41 @@ import { ArrowRight, Play } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section
-      className="
-        relative
-        isolate
-        min-h-[calc(100svh-74px)]
-        w-full
-        overflow-hidden
-        bg-[#1d1b18]
-
-        sm:min-h-[calc(100svh-80px)]
-      "
-    >
+    <section className="relative isolate min-h-[calc(100svh-74px)] w-full overflow-hidden bg-[#1C1A17] sm:min-h-[calc(100svh-80px)]">
       {/* =========================================================
           BACKGROUND IMAGE
           ========================================================= */}
-      <div className="absolute inset-0 -z-20">
+      <div className="absolute inset-0 -z-30">
         <img
           src="/bhairav.png"
-          alt="Newari cultural heritage, traditional instruments and festival"
-          className="
-            h-full
-            w-full
-            object-cover
-            object-center
-          "
+          alt="Newa cultural heritage and traditional festival"
+          className="h-full w-full object-cover object-center"
         />
       </div>
 
       {/* =========================================================
-          EDITORIAL OVERLAY
+          WARM EDITORIAL OVERLAY
           ========================================================= */}
 
-      {/* Main left-to-right overlay */}
+      {/* Main overlay */}
       <div
         className="
           absolute
           inset-0
-          -z-10
+          -z-20
           bg-gradient-to-r
-          from-[#1d1b18]/95
-          via-[#1d1b18]/72
-          to-[#1d1b18]/20
+          from-[#1C1A17]/95
+          via-[#1C1A17]/72
+          to-[#1C1A17]/25
 
-          md:from-[#1d1b18]/90
-          md:via-[#1d1b18]/60
+          md:from-[#1C1A17]/90
+          md:via-[#1C1A17]/58
           md:to-transparent
         "
       />
+
+      {/* Slight warm overlay over whole image */}
+      <div className="absolute inset-0 -z-20 bg-[#D46726]/[0.025]" />
 
       {/* Bottom fade */}
       <div
@@ -61,9 +48,10 @@ export default function HeroSection() {
           inset-x-0
           bottom-0
           -z-10
-          h-56
+          h-72
           bg-gradient-to-t
-          from-[#1d1b18]/70
+          from-[#1C1A17]/80
+          via-[#1C1A17]/30
           to-transparent
         "
       />
@@ -73,16 +61,18 @@ export default function HeroSection() {
           ========================================================= */}
       <div
         className="
+          relative
           mx-auto
           flex
           min-h-[calc(100svh-74px)]
           max-w-[1360px]
           items-center
           px-5
-          py-20
+          py-16
 
           sm:min-h-[calc(100svh-80px)]
           sm:px-8
+          sm:py-20
 
           lg:px-12
           lg:py-24
@@ -90,25 +80,24 @@ export default function HeroSection() {
           xl:px-16
         "
       >
-        <div className="w-full max-w-[850px]">
-
+        <div className="w-full max-w-[900px]">
           {/* =====================================================
               EYEBROW
               ===================================================== */}
-          <div className="mb-6 flex items-center gap-3 sm:mb-7">
-            <span className="h-px w-8 bg-[#C29B38] sm:w-12" />
+          <div className="mb-6 flex items-center gap-4 sm:mb-8">
+            <span className="h-px w-9 bg-[#D46726] sm:w-12" />
 
             <span
               className="
                 font-sans
                 text-[10px]
-                font-bold
+                font-semibold
                 uppercase
-                tracking-[0.16em]
-                text-[#ffdbcb]
+                tracking-[0.2em]
+                text-white/75
 
                 sm:text-[11px]
-                sm:tracking-[0.2em]
+                sm:tracking-[0.24em]
               "
             >
               Na Lisah Sanskritik Pucha
@@ -116,107 +105,63 @@ export default function HeroSection() {
           </div>
 
           {/* =====================================================
-              NEPALI HEADLINE
+              MAIN HEADLINE
               ===================================================== */}
           <h1
             className="
+              max-w-[900px]
               font-serif
-              text-[40px]
-              font-semibold
-              leading-[1.12]
-              tracking-[-0.02em]
-              text-[#fff8f3]
+              text-[42px]
+              font-medium
+              leading-[1.08]
+              tracking-[-0.025em]
+              text-[#FAF8F5]
 
-              sm:text-[52px]
-              sm:leading-[1.08]
+              sm:text-[56px]
+              sm:leading-[1.04]
 
-              md:text-[60px]
+              md:text-[66px]
 
-              lg:text-[70px]
-              lg:leading-[1.04]
+              lg:text-[76px]
 
-              xl:text-[76px]
+              xl:text-[82px]
             "
           >
-            नेपालको मौलिक बाजा,
-            <br />
+            <span className="block">Our culture.</span>
 
-            <span className="text-[#ffdbcb]">
-              जात्रा र नेवाः
+            <span className="block">
+              Our{" "}
+              <span className="text-[#D46726]">
+                heritage.
+              </span>
             </span>
 
-            <br />
-
-            <span className="text-[#D46726]">
-              परम्पराको संरक्षण
+            <span className="block text-[#4E76A3]">
+              Our identity.
             </span>
           </h1>
 
           {/* =====================================================
-              ENGLISH STATEMENT
+              SHORT STATEMENT
               ===================================================== */}
-          <div className="mt-6 sm:mt-7">
+          <div className="mt-7 sm:mt-8">
             <p
               className="
-                font-serif
-                text-[25px]
-                font-medium
-                leading-tight
-                text-[#fff8f3]
+                max-w-[620px]
+                font-sans
+                text-[15px]
+                leading-7
+                text-white/78
 
-                sm:text-[31px]
-
-                lg:text-[36px]
+                sm:text-[17px]
+                sm:leading-8
               "
             >
-              Preserving Culture.
-            </p>
-
-            <p
-              className="
-                mt-1
-                font-serif
-                text-[25px]
-                font-medium
-                italic
-                leading-tight
-                text-[#ffdbcb]
-
-                sm:text-[31px]
-
-                lg:text-[36px]
-              "
-            >
-              Celebrating Our Heritage.
+              Preserving Newa culture, traditional music, sacred festivals,
+              and ancestral traditions — keeping our heritage alive for
+              generations to come.
             </p>
           </div>
-
-          {/* =====================================================
-              DESCRIPTION
-              ===================================================== */}
-          <p
-            className="
-              mt-6
-              max-w-[650px]
-              font-sans
-              text-[14px]
-              leading-6
-              text-white/75
-
-              sm:mt-7
-              sm:text-[16px]
-              sm:leading-7
-
-              lg:text-[17px]
-              lg:leading-8
-            "
-          >
-            Na Lisah Sanskritik Pucha is a community-driven cultural
-            organization dedicated to preserving, practicing, and
-            promoting Nepal&apos;s rich Newari heritage, sacred festival
-            rhythms, traditional instruments, and ancestral traditions
-            for generations to come.
-          </p>
 
           {/* =====================================================
               BUTTONS
@@ -230,9 +175,11 @@ export default function HeroSection() {
 
               sm:mt-9
               sm:flex-row
+              sm:items-center
+              sm:gap-4
             "
           >
-            {/* PRIMARY */}
+            {/* PRIMARY BUTTON */}
             <Link
               href="#culture"
               className="
@@ -245,26 +192,29 @@ export default function HeroSection() {
                 rounded
                 bg-[#D46726]
                 px-6
-                py-3
+                py-3.5
                 font-sans
-                text-[13px]
+                text-[12px]
                 font-semibold
-                text-[#fff8f3]
+                tracking-[0.01em]
+                text-white
                 transition-all
                 duration-300
 
-                hover:bg-[#E27D38]
-                hover:shadow-[0_8px_24px_rgba(28,26,23,0.18)]
+                hover:bg-[#B9531E]
+                hover:shadow-[0_10px_30px_rgba(212,103,38,0.22)]
 
                 focus:outline-none
                 focus:ring-2
-                focus:ring-[#ffdbcb]
+                focus:ring-[#D46726]
+                focus:ring-offset-2
+                focus:ring-offset-[#1C1A17]
               "
             >
               Explore Our Culture
 
               <ArrowRight
-                size={17}
+                size={16}
                 strokeWidth={1.8}
                 className="
                   transition-transform
@@ -274,7 +224,7 @@ export default function HeroSection() {
               />
             </Link>
 
-            {/* SECONDARY */}
+            {/* SECONDARY BUTTON */}
             <Link
               href="#heritage"
               className="
@@ -286,21 +236,21 @@ export default function HeroSection() {
                 gap-3
                 rounded
                 border
-                border-white/45
-                bg-white/[0.06]
+                border-white/30
+                bg-white/[0.04]
                 px-6
-                py-3
+                py-3.5
                 font-sans
-                text-[13px]
+                text-[12px]
                 font-semibold
+                tracking-[0.01em]
                 text-white
                 backdrop-blur-sm
                 transition-all
                 duration-300
 
-                hover:border-white
-                hover:bg-white
-                hover:text-[#1d1b18]
+                hover:border-white/70
+                hover:bg-white/[0.10]
 
                 focus:outline-none
                 focus:ring-2
@@ -308,7 +258,7 @@ export default function HeroSection() {
               "
             >
               <Play
-                size={14}
+                size={13}
                 fill="currentColor"
                 strokeWidth={1.5}
               />
@@ -318,13 +268,56 @@ export default function HeroSection() {
           </div>
 
           {/* =====================================================
-              BOTTOM LABEL
+              CULTURAL LINE
               ===================================================== */}
-       
+          <div className="mt-10 flex items-center gap-4 sm:mt-12">
+            <span className="h-px w-8 bg-[#4E76A3] sm:w-10" />
+
+            <p
+              className="
+                font-serif
+                text-[13px]
+                tracking-[0.02em]
+                text-white/65
+
+                sm:text-[15px]
+              "
+            >
+              संस्कृति हाम्रो पहिचान
+            </p>
+          </div>
         </div>
       </div>
 
-     
+      {/* =========================================================
+          SUBTLE CORNER ACCENTS
+          ========================================================= */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-0
+          left-0
+          h-[3px]
+          w-28
+          bg-[#D46726]
+          sm:w-40
+        "
+      />
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-0
+          right-0
+          h-[3px]
+          w-20
+          bg-[#4E76A3]
+          sm:w-32
+        "
+      />
     </section>
   );
 }
