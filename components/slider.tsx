@@ -141,17 +141,7 @@ export default function Partnerships() {
           BOTTOM
       ===================================================== */}
 
-      <div className="mx-auto mt-8 max-w-[1360px] px-5 sm:mt-10 sm:px-8 lg:mt-12 lg:px-12">
-        <div className="flex items-center gap-3 sm:gap-6">
-          <span className="h-px flex-1 bg-[#DDC1B4]" />
-
-          <span className="shrink-0 font-sans text-[8px] font-semibold uppercase tracking-[0.15em] text-[#8A7267] sm:text-[10px] sm:tracking-[0.18em]">
-            Together · Our Heritage · Our Community
-          </span>
-
-          <span className="h-px flex-1 bg-[#DDC1B4]" />
-        </div>
-      </div>
+    
 
       {/* =====================================================
           ANIMATION
