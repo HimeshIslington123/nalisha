@@ -24,7 +24,7 @@ export default function WhatWeDo() {
               </span>
             </div>
 
-            <h2 className="font-serif text-[38px] leading-[1.08] tracking-[-0.02em] text-[#1C1A17] sm:text-[48px] lg:text-[54px]">
+            <h2 className="font-serif text-[36px] leading-[1.1] tracking-[-0.015em] sm:text-[52px] text-[#1C1A17] ">
               What We Do
               <span className="text-[#D46726]">.</span>
             </h2>

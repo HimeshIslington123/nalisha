@@ -55,7 +55,7 @@ export default function Partnerships() {
 
           {/* Heading + description */}
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-            <h2 className="max-w-[760px] font-serif text-[36px] leading-[1.08] tracking-[-0.02em] text-[#1C1A17] sm:text-[46px] lg:text-[54px]">
+            <h2 className="max-w-[760px]  text-[#1C1A17] font-serif text-[36px] leading-[1.1] tracking-[-0.015em] sm:text-[52px]">
               Partnerships & Organizations
               <span className="text-[#D46726]">.</span>
             </h2>
