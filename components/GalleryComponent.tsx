@@ -53,7 +53,7 @@ export default function MemoriesGallery() {
   const rowThree = [...memories, ...memories];
 
   return (
-    <section className="w-full overflow-hidden bg-[#FAF8F5] py-20 sm:py-24 lg:py-28">
+    <section className="w-full overflow-hidden bg-[#F5F0E8]  py-20 sm:py-24 lg:py-28">
       <div className="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12">
 
         {/* =====================================================

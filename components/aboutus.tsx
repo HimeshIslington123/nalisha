@@ -107,31 +107,75 @@ export default function AboutUs() {
                 dance, and ancestral traditions.
               </p>
 
-              {/* Buttons */}
-              <div className="mt-8 flex flex-wrap items-center gap-4 sm:mt-9 sm:gap-5">
+              {/* =================================================
+                  BUTTONS — ALWAYS SAME LINE
+              ================================================= */}
+
+              <div className="mt-8 flex flex-nowrap items-center gap-3 sm:mt-9 sm:gap-5">
                 {/* Primary button */}
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 bg-[#D46726] px-5 py-3.5 font-sans text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#B9531E] sm:px-6 sm:text-[13px]"
+                  className="
+                    group
+                    inline-flex
+                    shrink-0
+                    items-center
+                    gap-2
+                    bg-[#D46726]
+                    px-4
+                    py-3
+                    font-sans
+                    text-[10px]
+                    font-semibold
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:bg-[#B9531E]
+                    sm:gap-3
+                    sm:px-6
+                    sm:py-3.5
+                    sm:text-[13px]
+                  "
                 >
                   Connect With Us
 
                   <ArrowRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1 sm:h-4 sm:w-4"
                   />
                 </Link>
 
                 {/* Secondary link */}
                 <Link
                   href="/gallery"
-                  className="group inline-flex items-center gap-3 border-b border-[#1C1A17] px-1 py-3 font-sans text-[12px] font-semibold text-[#1C1A17] transition-colors duration-300 hover:border-[#4E76A3] hover:text-[#4E76A3] sm:text-[13px]"
+                  className="
+                    group
+                    inline-flex
+                    shrink-0
+                    items-center
+                    gap-2
+                    border-b
+                    border-[#1C1A17]
+                    px-0.5
+                    py-3
+                    font-sans
+                    text-[10px]
+                    font-semibold
+                    text-[#1C1A17]
+                    transition-colors
+                    duration-300
+                    hover:border-[#4E76A3]
+                    hover:text-[#4E76A3]
+                    sm:gap-3
+                    sm:px-1
+                    sm:text-[13px]
+                  "
                 >
                   Explore Our Heritage
 
                   <ArrowRight
-                    size={15}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-1 sm:h-[15px] sm:w-[15px]"
                   />
                 </Link>
               </div>
@@ -264,14 +308,12 @@ export default function AboutUs() {
             ================================================= */}
 
             <div className="border-l-2 border-[#D46726] pl-6 sm:pl-10">
-              {/* Quote icon */}
               <Quote
                 size={30}
                 strokeWidth={1.2}
                 className="mb-5 text-[#D46726]"
               />
 
-              {/* Quote */}
               <p className="font-serif text-[24px] leading-[1.45] text-[#1C1A17] sm:text-[32px]">
                 “पुर्खाले दिएको सम्पदा, हाम्रो पहिचान; यसलाई जोगाउनु हाम्रो पुस्ताको दायित्व।”
               </p>
@@ -281,7 +323,6 @@ export default function AboutUs() {
               ================================================= */}
 
               <div className="mt-7 flex items-center gap-3">
-                {/* Circular group photo */}
                 <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-[#DDC1B4] bg-[#FAF8F5]">
                   <img
                     src="/digital.png"
@@ -290,7 +331,6 @@ export default function AboutUs() {
                   />
                 </div>
 
-                {/* Name */}
                 <div>
                   <p className="font-serif text-[16px] leading-none text-[#1C1A17]">
                     Na Lisah
@@ -403,3 +443,4 @@ export default function AboutUs() {
     </main>
   );
 }
+
