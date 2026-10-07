@@ -7,19 +7,19 @@ import { ArrowUpRight } from "lucide-react";
 
 const memories = [
   {
-    src: "/kisi.png",
+    src: "/solo7.jpg",
     alt: "Newa cultural event",
   },
   {
-    src: "/gunla.png",
+    src: "/solo8.jpg",
     alt: "Community gathering",
   },
   {
-    src: "/group.png",
+    src: "/group1.jpg",
     alt: "Cultural celebration",
   },
   {
-    src: "/praful.png",
+    src: "/solo5.jpg",
     alt: "Traditional event",
   },
   {
@@ -27,19 +27,26 @@ const memories = [
     alt: "Community event",
   },
   {
-    src: "/bhairav.png",
+    src: "/solo6.jpg",
     alt: "Newa heritage celebration",
   },
   {
-    src: "/dhime.png",
+    src: "/solo4.jpg",
     alt: "Cultural gathering",
   },
   {
-    src: "/dagi.png",
+    src: "/solo2.jpg",
     alt: "Newa community",
   },
   {
-    src: "/kumari.png",
+    src: "/solo1.jpg",
+    alt: "Heritage event",
+  },{
+    src: "/solo3.jpg",
+    alt: "Newa community",
+  },
+  {
+    src: "/solo8.jpg",
     alt: "Heritage event",
   },
 ];
