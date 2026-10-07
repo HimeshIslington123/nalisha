@@ -1,50 +1,33 @@
-
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  Home,
-  Users,
-  Images,
-  CalendarDays,
-  Phone,
-  Newspaper,
-  Menu,
-  X,
-  ArrowRight,
-} from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const navItems = [
   {
     name: "Home",
     href: "/",
-    icon: Home,
   },
   {
     name: "About Us",
-    href: "/about",
-    icon: Users,
+    href: "/aboutus",
   },
   {
     name: "Gallery",
     href: "/gallery",
-    icon: Images,
   },
   {
     name: "Events",
     href: "/events",
-    icon: CalendarDays,
   },
   {
     name: "Contact Us",
-    href: "/contact",
-    icon: Phone,
+    href: "/contactus",
   },
   {
     name: "Blog",
     href: "/blog",
-    icon: Newspaper,
   },
 ];
 
@@ -82,7 +65,7 @@ export default function Navbar() {
         >
           {/* =====================================================
               LOGO
-              ===================================================== */}
+          ===================================================== */}
           <Link
             href="/"
             onClick={() => setMobileOpen(false)}
@@ -154,67 +137,60 @@ export default function Navbar() {
 
           {/* =====================================================
               DESKTOP NAVIGATION
-              ===================================================== */}
+          ===================================================== */}
           <div className="hidden items-center lg:flex">
-            {navItems.map((item) => {
-              const Icon = item.icon;
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="
+                  group
+                  relative
+                  flex
+                  items-center
+                  px-3.5
+                  py-3
+                  font-sans
+                  text-[13px]
+                  font-semibold
+                  text-[#574239]
+                  transition-colors
+                  duration-200
 
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
+                  xl:px-4
+                  xl:text-[14px]
+
+                  hover:text-[#9B4000]
+                "
+              >
+                <span>{item.name}</span>
+
+                {/* Editorial underline */}
+                <span
                   className="
-                    group
-                    relative
-                    flex
-                    items-center
-                    gap-2
-                    px-3.5
-                    py-3
-                    font-sans
-                    text-[13px]
-                    font-semibold
-                    text-[#574239]
-                    transition-colors
-                    duration-200
-
-                    xl:px-4
-                    xl:text-[14px]
-
-                    hover:text-[#9B4000]
+                    absolute
+                    bottom-[5px]
+                    left-4
+                    right-4
+                    h-px
+                    origin-left
+                    scale-x-0
+                    bg-[#D46726]
+                    transition-transform
+                    duration-300
+                    group-hover:scale-x-100
                   "
-                >
-                 
-
-                  <span>{item.name}</span>
-
-                  {/* Editorial underline */}
-                  <span
-                    className="
-                      absolute
-                      bottom-[5px]
-                      left-4
-                      right-4
-                      h-px
-                      origin-left
-                      scale-x-0
-                      bg-[#D46726]
-                      transition-transform
-                      duration-300
-                      group-hover:scale-x-100
-                    "
-                  />
-                </Link>
-              );
-            })}
+                />
+              </Link>
+            ))}
           </div>
 
           {/* =====================================================
               DESKTOP CTA
-              ===================================================== */}
+          ===================================================== */}
           <div className="hidden lg:flex">
             <Link
-              href="/contact"
+              href="/contactus"
               className="
                 group
                 flex
@@ -251,7 +227,7 @@ export default function Navbar() {
 
           {/* =====================================================
               MOBILE MENU BUTTON
-              ===================================================== */}
+          ===================================================== */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -279,16 +255,22 @@ export default function Navbar() {
             "
           >
             {mobileOpen ? (
-              <X size={21} strokeWidth={1.7} />
+              <X
+                size={21}
+                strokeWidth={1.7}
+              />
             ) : (
-              <Menu size={21} strokeWidth={1.7} />
+              <Menu
+                size={21}
+                strokeWidth={1.7}
+              />
             )}
           </button>
         </div>
 
         {/* =======================================================
             MOBILE MENU
-            ======================================================= */}
+        ======================================================= */}
         <div
           className={`
             overflow-hidden
@@ -317,73 +299,53 @@ export default function Navbar() {
               sm:px-6
             "
           >
-            {navItems.map((item) => {
-              const Icon = item.icon;
+            {/* Mobile Navigation */}
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="
+                  group
+                  flex
+                  items-center
+                  justify-between
+                  border-b
+                  border-[#1d1b18]/[0.07]
+                  py-3.5
+                  font-sans
+                  text-[14px]
+                  font-semibold
+                  text-[#574239]
+                  transition-colors
+                  duration-200
 
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                  hover:text-[#9B4000]
+                "
+              >
+                <span>{item.name}</span>
+
+                <ArrowRight
+                  size={16}
+                  strokeWidth={1.6}
                   className="
-                    group
-                    flex
-                    items-center
-                    justify-between
-                    border-b
-                    border-[#1d1b18]/[0.07]
-                    py-3.5
-                    font-sans
-                    text-[14px]
-                    font-semibold
-                    text-[#574239]
-                    transition-colors
-                    hover:text-[#9B4000]
+                    text-[#C29B38]
+                    transition-transform
+                    duration-200
+                    group-hover:translate-x-1
                   "
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="
-                        flex
-                        h-9
-                        w-9
-                        items-center
-                        justify-center
-                        rounded
-                        bg-[#F5F0E8]
-                      "
-                    >
-                      <Icon
-                        size={17}
-                        strokeWidth={1.7}
-                        className="
-                          text-[#9B4000]
-                        "
-                      />
-                    </div>
+                />
+              </Link>
+            ))}
 
-                    <span>{item.name}</span>
-                  </div>
-
-                  <ArrowRight
-                    size={16}
-                    strokeWidth={1.6}
-                    className="
-                      text-[#C29B38]
-                      transition-transform
-                      duration-200
-                      group-hover:translate-x-1
-                    "
-                  />
-                </Link>
-              );
-            })}
-
-            {/* Mobile CTA */}
+            {/* =================================================
+                MOBILE CTA
+            ================================================= */}
             <Link
-              href="/contact"
+              href="/contactus"
               onClick={() => setMobileOpen(false)}
               className="
+                group
                 mt-4
                 flex
                 w-full
@@ -398,16 +360,23 @@ export default function Navbar() {
                 text-sm
                 font-semibold
                 text-[#fff8f3]
-                transition-colors
+                transition-all
                 duration-200
+
                 hover:bg-[#E27D38]
+                hover:shadow-[0_6px_18px_rgba(28,26,23,0.12)]
               "
             >
-              Join Our Community
+              <span>Join Our Community</span>
 
               <ArrowRight
                 size={16}
                 strokeWidth={1.8}
+                className="
+                  transition-transform
+                  duration-200
+                  group-hover:translate-x-1
+                "
               />
             </Link>
           </div>
@@ -416,4 +385,3 @@ export default function Navbar() {
     </header>
   );
 }
-
